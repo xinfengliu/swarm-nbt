@@ -33,9 +33,9 @@ func StartBenchmark(c *cli.Context) error {
 		return UCPCompatibilityStart()
 	}
 
-	dockerNbtImage := getEnv("DOCKER_NBT_IMG", "alexmavr/swarm-nbt:latest")
-	dockerPromImage := getEnv("DOCKER_PROM_IMG", "alexmavr/swarm-nbt-prometheus:latest")
-	dockerGrafImage := getEnv("DOCKER_GRAF_IMG", "grafana/grafana")
+	dockerNbtImage := getEnv("DOCKER_NBT_IMG", "xinfengliu/swarm-nbt:latest")
+	dockerPromImage := getEnv("DOCKER_PROM_IMG", "xinfengliu/swarm-nbt-prometheus:latest")
+	dockerGrafImage := getEnv("DOCKER_GRAF_IMG", "grafana/grafana:4.6.3")
 
 	log.SetOutput(os.Stdout)
 	dclient, err := getDockerClient(c.String("docker_socket"))
